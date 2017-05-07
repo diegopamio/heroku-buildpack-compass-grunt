@@ -11,9 +11,9 @@ status() {
 
 # Install compass
 status "Installing Compass"
-export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.4.0
+ruby --version
+export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.5.0
 PATH="$GEM_HOME/bin:$PATH"
-PATH="$PATH:$BUILD_DIR/ruby/.gem/ruby/1.9.1/bin"
 
 if [ ! -f $GEM_HOME/bin/compass ]; then
   mkdir -p $BUILD_DIR/ruby
