@@ -12,6 +12,7 @@ status() {
 # Install compass
 status "Installing Compass"
 ruby --version
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.5.0
 PATH="$GEM_HOME/bin:$PATH"
 
