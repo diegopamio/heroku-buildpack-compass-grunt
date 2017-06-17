@@ -15,6 +15,8 @@ source /app/.rvm/scripts/rvm
 # Install compass
 status "Installing Compass"
 ruby --version
+ls $BUILD_DIR/.apt/usr/lib
+echo $LD_LIBRARY_PATH
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.0.0
 PATH="$GEM_HOME/bin:$PATH"
