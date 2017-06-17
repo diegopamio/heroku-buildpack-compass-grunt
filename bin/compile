@@ -9,7 +9,7 @@ CACHE_DIR=$2
 
 cd $BUILD_DIR
 
-\curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0 --autolibs=read-fail
+\curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0 --autolibs=read-only
 source /app/.rvm/scripts/rvm
 
 # Install compass
