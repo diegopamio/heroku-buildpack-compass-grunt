@@ -9,7 +9,7 @@ CACHE_DIR=$2
 
 cd $BUILD_DIR
 
-\curl -L https://get.rvm.io | bash -s stable --ruby=2.4.1 --autolibs=read-only
+\curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0 --autolibs=read-only
 source /app/.rvm/scripts/rvm
 
 # Install compass
@@ -18,7 +18,7 @@ ruby --version
 ls $BUILD_DIR/.apt/usr/lib
 echo $LD_LIBRARY_PATH
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.4.1
+export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.0.0
 PATH="$GEM_HOME/bin:$PATH"
 
 if [ ! -f $GEM_HOME/bin/compass ]; then
