@@ -8,6 +8,9 @@ cd $BUILD_DIR
 status() {
   echo "-----> $*"
 }
+
+apt-get -y --force-yes -d install --reinstall ruby2.0
+
 # Install compass
 status "Installing Compass"
 ruby --version
