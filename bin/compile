@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
--status() {		
- -  echo "-----> $*"		
- -}
+status() {		
+   echo "-----> $*"		
+}
  
 BUILD_DIR=$1
 CACHE_DIR=$2
