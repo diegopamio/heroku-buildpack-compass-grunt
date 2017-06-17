@@ -67,21 +67,21 @@ export CPPPATH="$INCLUDE_PATH"
 export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu/pkgconfig:$BUILD_DIR/.apt/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 #give environment to later buildpacks
-export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
+#export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
 topic "Rewrite package-config files"
 find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
 
 # Install compass
 status "Installing Compass"
-ruby --version
+.apt/usr/bin/ruby --version
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
 
 if [ ! -f $GEM_HOME/bin/compass ]; then
   mkdir -p $BUILD_DIR/ruby
-  HOME="$BUILD_DIR/ruby" gem install compass -v 1.0.3 --user-install --no-rdoc --no-ri
+  HOME=".apt/usr/bin/ruby" gem install compass -v 1.0.3 --user-install --no-rdoc --no-ri
 fi
 
 # Run Grunt
