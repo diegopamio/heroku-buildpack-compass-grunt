@@ -74,8 +74,8 @@ find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty
 
 # Install compass
 status "Installing Compass"
-ls -la $BUILD_DIR/.apt/usr/bin
-$BUILD_DIR/.apt/usr/bin/ruby --version
+ls -la $BUILD_DIR/.apt/usr/bin/ruby2.0
+$BUILD_DIR/.apt/usr/bin/ruby2.0 --version
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
