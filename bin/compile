@@ -10,7 +10,8 @@ CACHE_DIR=$2
 cd $BUILD_DIR
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-\curl -L https://raw.githubusercontent.com/rvm/rvm/1a5101075c547fb91041e8c51255d6bccdc03a1f/binscripts/rvm-installer | bash -s stable --ruby=2.0.0 --autolibs=read-only
+# \curl -L https://raw.githubusercontent.com/rvm/rvm/1a5101075c547fb91041e8c51255d6bccdc03a1f/binscripts/rvm-installer | bash -s stable --ruby=2.0.0 --autolibs=read-only
+\curl -sSL https://get.rvm.io | bash -s stable  --ruby=2.0.0 --autolibs=read-only
 source /app/.rvm/scripts/rvm
 
 # Install compass
