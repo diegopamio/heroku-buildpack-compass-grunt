@@ -11,14 +11,14 @@ cd $BUILD_DIR
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 # \curl -L https://raw.githubusercontent.com/rvm/rvm/1a5101075c547fb91041e8c51255d6bccdc03a1f/binscripts/rvm-installer | bash -s stable --ruby=2.0.0 --autolibs=read-only
-\curl -sSL https://get.rvm.io | bash -s stable  --ruby=2.3.0 --autolibs=read-only
+\curl -sSL https://get.rvm.io | bash -s stable  --ruby=2.2.0 --autolibs=read-only
 source /app/.rvm/scripts/rvm
 
 # Install compass
 status "Installing Compass"
 ruby --version
-rvm all do gem install ffi -f
-rvm all do gem install --conservative compass
+rvm all do gem install ffi -f -v 1.12.2
+rvm all do gem install --conservative compass -v 1.0.3
 
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 #export GEM_HOME=$BUILD_DIR/ruby/.gem/ruby/2.0.0
