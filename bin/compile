@@ -17,6 +17,7 @@ source /app/.rvm/scripts/rvm
 # Install compass
 status "Installing Compass"
 ruby --version
+rvm all do gem install ffi -f
 rvm all do gem install --conservative compass
 
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
